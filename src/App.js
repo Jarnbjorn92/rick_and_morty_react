@@ -50,9 +50,12 @@ function App() {
 
   return (
     <div className="App">
-      <p>Rick and Morty's Plumbus Shop</p>
+      <header className='header'>
+        Rick and Morty's Plumbus Shop!
+      </header>
+      <p className='separator'></p>
       <CharacterContainer pages={pages}/>
-
+      <footer className='footer'>Plumbus Copyright © 2023 - Property of G35</footer>
     </div>
   );
 }

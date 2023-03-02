@@ -2,16 +2,18 @@ import React, { useState , useEffect } from "react";
 import CharacterDetail from "../components/CharacterDetail";
 import CharacterList from "../components/CharacterList";
 import PageSelector from "../components/PageSelector";
-import styled from "styled-components";
+import './CharacterContainer.css'
 
-const Title = styled.h1`
-    text-align: center;
-    font-size: 1.5em;
-    color: #fff;
-    background-color: #062c43;
-    margin: 0;
-    padding: 1em;
-    `
+// import styled from "styled-components";
+
+// const Title = styled.h1`
+//     text-align: center;
+//     font-size: 1.5em;
+//     color: #fff;
+//     background-color: #062c43;
+//     margin: 0;
+//     padding: 1em;
+//     `
 
 const CharacterContainer = ({pages}) => {
 
@@ -30,6 +32,7 @@ const CharacterContainer = ({pages}) => {
 
     const onCharacterClick = (character) => {
         setSelectedCharacter(character)
+        window.scrollTo(375,375)
     }
 
     const handleSelectChange = event => {
@@ -38,18 +41,17 @@ const CharacterContainer = ({pages}) => {
 
     return (
         <>
-        <div>
-        <Title>Plumbus for the win!</Title>
-            {selectedCharacter ? <CharacterDetail character={selectedCharacter}/> : null}
+        <div className='view-box'>
+            {selectedCharacter ? <CharacterDetail character={selectedCharacter}/> : <img src={require(`./plumbus_lg.png`)}/>}
         </div>
-        <div>
+        <div className="outer-container">
             <PageSelector handleSelectChange={handleSelectChange} pages={pages}/>
         </div>
-        <div>
+        <div className="h1-list">
             <CharacterList characters={characters} onCharacterClick={onCharacterClick}/>
         </div>
         </>
     )
 }
-{/* <img src={require(`./plumbus_lg.png`)}/> */}
+
 export default CharacterContainer;
