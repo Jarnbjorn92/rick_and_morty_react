@@ -1,33 +1,35 @@
 import React from 'react'
-import styled from 'styled-components'
+import './CharacterDetail.css'
 
-const SchwiftyCharacter = styled.div`
-    display: flex;
-    background: #054569;
-    justify-content: space-evenly;
-    color: #fff;
-    `
+// import styled from 'styled-components'
 
-const Plumbus = styled.p`
-    margin: 0;
-    padding: 1em;
-    background-color: #ced7e0;
-    color: #062c43;
-    `
+// const SchwiftyCharacter = styled.div`
+//     display: flex;
+//     background: #054569;
+//     justify-content: space-evenly;
+//     color: #fff;
+//     `
+
+// const Plumbus = styled.p`
+//     margin: 0;
+//     padding: 1em;
+//     background-color: #ced7e0;
+//     color: #062c43;
+//     `
 
 const CharacterDetail = ({character}) => {
 
     return (
-        <div>
-        <SchwiftyCharacter>
-            <Plumbus><u>{character.name}</u></Plumbus>
-            <img src={character.image} alt="empty"/>
-            <Plumbus>Status: {character.status}</Plumbus>
-            <Plumbus>Gender: {character.gender}</Plumbus>
-            <Plumbus>Species: {character.species}</Plumbus>
-            <Plumbus>Origin: {character.origin.name}</Plumbus>
-            <Plumbus>Location: {character.location.name}</Plumbus>
-        </SchwiftyCharacter>
+        <div className='char-detail'>
+            <div className='char-info'>
+                <p><u>{character.name}</u></p>
+                <img src={character.image} alt="empty"/>
+                <p>Status: {character.status}</p>
+                <p>Gender: {character.gender}</p>
+                <p>Species: {character.species}</p>
+                <p>Origin: {character.origin.name}</p>
+                <p>Location: {character.location.name}</p>
+            </div>
         </div>
     )
 }

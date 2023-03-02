@@ -1,12 +1,13 @@
 import React from 'react'
-import styled from 'styled-components'
+import './ListItem.css'
+// import styled from 'styled-components'
 
-const Button = styled.button`
-    font-size: 1em;
-    padding: 1em;
-    margin: 0.5;
-    border: 2px solid #ced7e0;
-    `
+// const Button = styled.button`
+//     font-size: 1em;
+//     padding: 1em;
+//     margin: 0.5;
+//     border: 2px solid #ced7e0;
+//     `
 
 const ListItem = ({character, onCharacterClick}) => {
 
@@ -15,11 +16,11 @@ const ListItem = ({character, onCharacterClick}) => {
     }
 
     return (
-        <div>
-            <p>{character.name}</p>
-            <img src={character.image} alt="yo"/>
+        <div className='list-item'>
+            <p className='char-name'>{character.name}</p>
+            <img className='char-image' src={character.image} alt="yo"/>
 
-            <Button onClick={handleClick}>Plumbus</Button>
+            <button className='detail-button' onClick={handleClick}>Plumbus</button>
         </div>
     )
     
